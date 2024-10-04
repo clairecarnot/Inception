@@ -1,0 +1,14 @@
+# [mysqld]: settings for MariaDB server daemon
+# mysql: the user MDB should run as, so that the db processes have limited permissions
+# datadir: where MDB datafiles are stored
+# socket file used for local connections to the MDB server.  Unix sockets are used for communication between processes on the same machine, providing better performance compared to TCP/IP connections
+# bind_address: useless ? MDB listens to connections from all available network interfaces on the host machine by default
+# port: listen for TCP/IP connections (also useless ? see above)
+
+[mysqld]
+user = mysql
+datadir = /var/lib/mysql
+socket  = /var/run/mysqld/mysqld.sock
+bind_address=*
+port = 3306
+log_error = /var/log/mysql/error.log
